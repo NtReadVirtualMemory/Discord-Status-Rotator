@@ -2,6 +2,7 @@ import requests
 import time
 import json
 import os
+from keep_alive import keep_alive
 from colorama import init, Fore
 
 def read_statuses(file_name):
@@ -53,6 +54,8 @@ speed_rotator = 5
 status_sequence = ["dnd"] #["online", "idle", "dnd"]
 
 status_count = 0  
+
+keep_alive()
 
 while True:
     current_status = status_sequence[status_count % len(status_sequence)]
