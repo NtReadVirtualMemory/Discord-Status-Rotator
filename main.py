@@ -60,15 +60,6 @@ while True:
     statuses = text_to_list(os.environ.get("Statuses")) ## Example: "Hello,hi,real,lol"
 
     status = statuses[status_count % len(statuses)]
-    time_formatted = color_text(time.strftime("%I:%M %p:"), Fore.MAGENTA)
-    if is_valid_token:
-        token_color_code = Fore.GREEN
-    else:
-        token_color_code = Fore.RED
-    token_masked = token[:6] + "******"
-    token_info = f"{token_masked} | {user_info}"
-    token_colored = color_text(token_info, token_color_code)
-    status_colored = color_text(status, Fore.CYAN)
 
     change_status(token, status, current_status)
 
